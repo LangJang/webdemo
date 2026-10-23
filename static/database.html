@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数据库 Database · SCS 海洋环境数据平台</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body data-page="database">
+
+  <header class="app-header">
+    <div class="header-inner">
+      <a class="brand" href="/">
+        <span class="brand-cn">SCS 海洋环境数据平台</span>
+        <span class="brand-en">South China Sea Marine Environmental Data Platform</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/" data-nav="home">首页</a>
+        <a href="/database" data-nav="database">数据库</a>
+        <a href="/upload" data-nav="upload">数据上传</a>
+        <a href="/download" data-nav="download">数据下载</a>
+        <a href="/achievements" data-nav="achievements">成果</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <h1 class="page-title">数据库 Database</h1>
+
+    <div class="toolbar">
+      <input id="db-search" type="text" placeholder="搜索数据集名称 / 来源 / 变量 / 关键词 …">
+      <select id="db-source">
+        <option value="">全部来源</option>
+      </select>
+      <button id="db-reset" class="btn">重置</button>
+    </div>
+
+    <div class="table-wrap">
+      <table id="db-table">
+        <thead>
+          <tr>
+            <th data-sort="name">数据集名称</th>
+            <th data-sort="source">来源</th>
+            <th>变量</th>
+            <th>空间范围</th>
+            <th data-sort="temporal">时间范围</th>
+            <th data-sort="resolution">分辨率</th>
+            <th>深度</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="db-tbody">
+          <tr><td colspan="8" class="empty-hint">加载中…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-foot"><span id="db-count">共 0 条</span></div>
+  </main>
+
+  <footer class="app-footer">
+    <span>数据来源 · 引用方式 · 联系方式 · v0.2 · 原型（占位符，后续接入真实管线）</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

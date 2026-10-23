@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数据上传 Upload · SCS 海洋环境数据平台</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body data-page="upload">
+
+  <header class="app-header">
+    <div class="header-inner">
+      <a class="brand" href="/">
+        <span class="brand-cn">SCS 海洋环境数据平台</span>
+        <span class="brand-en">South China Sea Marine Environmental Data Platform</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/" data-nav="home">首页</a>
+        <a href="/database" data-nav="database">数据库</a>
+        <a href="/upload" data-nav="upload">数据上传</a>
+        <a href="/download" data-nav="download">数据下载</a>
+        <a href="/achievements" data-nav="achievements">成果</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <h1 class="page-title">数据上传 Upload</h1>
+
+    <section class="panel">
+      <h2 class="section-title">上传文件</h2>
+      <div id="drop-zone" class="drop-zone">
+        <p class="dz-title">拖拽文件到此处，或点击选择</p>
+        <p class="dz-sub">支持格式：NetCDF(.nc/.nc4) · HDF5(.h5) · CSV/TSV · Excel(.xlsx) · GeoJSON · Shapefile(.shp) · GeoTIFF(.tif) · FASTA/BIOM</p>
+        <input id="file-input" type="file" multiple hidden>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">标准上传模板 Standard Templates</h2>
+      <p class="panel-hint">下载模板并按必填列填写后上传（模板内含示例行与列说明）：</p>
+      <div class="tpl-cards">
+        <a class="tpl-card" href="/api/templates/fishery" download>
+          <h3>渔业捕捞 Fishery</h3>
+          <p>lat, lon, date, species, gear, catch_kg</p>
+          <span class="tpl-btn">下载 CSV 模板</span>
+        </a>
+        <a class="tpl-card" href="/api/templates/station" download>
+          <h3>站点观测 Station</h3>
+          <p>station_id, lat, lon, datetime, variable, value, unit</p>
+          <span class="tpl-btn">下载 CSV 模板</span>
+        </a>
+        <a class="tpl-card" href="/api/templates/edna" download>
+          <h3>eDNA OTU 表 eDNA</h3>
+          <p>sample_id, lat, lon, depth_m, taxon, abundance</p>
+          <span class="tpl-btn">下载 CSV 模板</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">上传队列 Upload Queue</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>文件名</th><th>大小</th><th>格式</th><th>校验结果</th></tr>
+          </thead>
+          <tbody id="upload-tbody">
+            <tr><td colspan="4" class="empty-hint">尚未选择文件</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span>数据来源 · 引用方式 · 联系方式 · v0.2 · 原型（占位符，后续接入真实管线）</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

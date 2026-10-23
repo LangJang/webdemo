@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCS 海洋环境数据平台 · 首页</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body data-page="home">
+
+  <header class="app-header">
+    <div class="header-inner">
+      <a class="brand" href="/">
+        <span class="brand-cn">SCS 海洋环境数据平台</span>
+        <span class="brand-en">South China Sea Marine Environmental Data Platform</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/" data-nav="home">首页</a>
+        <a href="/database" data-nav="database">数据库</a>
+        <a href="/upload" data-nav="upload">数据上传</a>
+        <a href="/download" data-nav="download">数据下载</a>
+        <a href="/achievements" data-nav="achievements">成果</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="home-main">
+    <section class="hero">
+      <h1>南海海洋环境数据平台</h1>
+      <p class="hero-sub">多源海洋数据 · 检索 · 制图 · 下载 — 覆盖物理海洋、生物地球化学与渔业/eDNA</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/database">进入数据库</a>
+        <a class="btn btn-outline btn-lg" href="/download">开始下载</a>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span class="stat-num" id="stat-datasets">—</span><span class="stat-label">数据集 Datasets</span></div>
+      <div class="stat"><span class="stat-num" id="stat-files">—</span><span class="stat-label">数据文件 Files</span></div>
+      <div class="stat"><span class="stat-num" id="stat-spatial">—</span><span class="stat-label">空间覆盖 Spatial</span></div>
+      <div class="stat"><span class="stat-num" id="stat-temporal">—</span><span class="stat-label">时间范围 Temporal</span></div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">快捷入口</h2>
+      <div class="quick-cards">
+        <a class="qcard" href="/database">
+          <h3>数据库 Database</h3>
+          <p>浏览与检索全部数据集，查看来源、变量、时空与垂直信息。</p>
+        </a>
+        <a class="qcard" href="/upload">
+          <h3>数据上传 Upload</h3>
+          <p>按标准模板上传 NetCDF / CSV / GeoJSON 等常见格式。</p>
+        </a>
+        <a class="qcard" href="/download">
+          <h3>数据下载 Data Download</h3>
+          <p>设置检索条件，预览并下载所需数据。</p>
+        </a>
+        <a class="qcard" href="/achievements">
+          <h3>成果展示 Achievements</h3>
+          <p>数据产品、图集与分析成果的介绍与下载。</p>
+        </a>
+        <a class="qcard" href="/docs">
+          <h3>API 文档 API Docs</h3>
+          <p>Swagger 交互式接口文档（FastAPI 自动生成）。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">关于本平台</h2>
+      <p class="about-text">
+        本平台聚合多源南海海洋环境数据（SCSIO 模型输出、CMEMS/Copernicus 再分析产品），
+        通过统一的适配器与规范变量体系（canonical schema）进行标准化，提供检索、制图与下载服务。
+        当前为界面原型：数据与图件以占位符展示，后续接入真实数据管线。
+      </p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span>数据来源 · 引用方式 · 联系方式 · v0.2 · 原型（占位符，后续接入真实管线）</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

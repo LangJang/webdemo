@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数据下载 Data Download · SCS 海洋环境数据平台</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body data-page="download">
+
+  <header class="app-header">
+    <div class="header-inner">
+      <a class="brand" href="/">
+        <span class="brand-cn">SCS 海洋环境数据平台</span>
+        <span class="brand-en">South China Sea Marine Environmental Data Platform</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/" data-nav="home">首页</a>
+        <a href="/database" data-nav="database">数据库</a>
+        <a href="/upload" data-nav="upload">数据上传</a>
+        <a href="/download" data-nav="download">数据下载</a>
+        <a href="/achievements" data-nav="achievements">成果</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <h1 class="page-title">数据下载 Data Download</h1>
+    <p class="page-sub">设置检索条件 → 预览数据 → 下载所需数据（预览图仅为数据预览参考）</p>
+
+    <div class="chart-grid">
+
+      <aside class="chart-left">
+
+        <details class="param-group" open>
+          <summary>基础地图 Basic Map</summary>
+          <div class="pg-body">
+            <label class="field">数据集 Dataset
+              <select id="dataset-select"><option>加载中…</option></select>
+            </label>
+            <label class="field">变量 Variable
+              <select id="var-select" disabled><option>— 先选数据集 —</option></select>
+            </label>
+            <label class="field">深度 Depth
+              <select id="depth-select" disabled><option>— 先选数据集 —</option></select>
+            </label>
+            <label class="field">时间 Time
+              <select id="time-select" disabled><option>— 先选数据集 —</option></select>
+            </label>
+
+            <fieldset class="field region">
+              <legend>区域 Region</legend>
+              <select id="region-select"></select>
+              <div class="nswe">
+                <label>N <input id="n-input" type="number" step="0.01"></label>
+                <label>E <input id="e-input" type="number" step="0.01"></label>
+                <label>S <input id="s-input" type="number" step="0.01"></label>
+                <label>W <input id="w-input" type="number" step="0.01"></label>
+              </div>
+            </fieldset>
+
+            <label class="field">色标 Color
+              <select id="cmap-select"></select>
+            </label>
+
+            <fieldset class="field range">
+              <legend>数值范围 Range</legend>
+              <label class="chk"><input id="range-auto" type="checkbox" checked> 自动 Auto</label>
+              <div class="range-inputs">
+                <label>min <input id="vmin-input" type="number" step="any" disabled></label>
+                <label>max <input id="vmax-input" type="number" step="any" disabled></label>
+              </div>
+            </fieldset>
+          </div>
+        </details>
+
+        <div id="category-panels"></div>
+
+        <div class="chart-actions">
+          <button class="btn btn-primary" id="plot-btn">预览数据</button>
+          <button class="btn" id="export-btn" disabled title="待接入">下载数据</button>
+        </div>
+
+      </aside>
+
+      <div class="chart-right">
+        <div class="tabs">
+          <button class="tab active" data-tab="map">预览 Preview</button>
+          <button class="tab" data-tab="ts">时间序列 Time series</button>
+          <button class="tab" data-tab="table">数据表 Table</button>
+        </div>
+        <div id="pane-map" class="placeholder map-placeholder">
+          <span class="ph-title">Data preview placeholder</span>
+          <span class="ph-desc">选择数据集与参数后点击「预览数据」</span>
+        </div>
+        <div id="pane-ts" class="placeholder" hidden>
+          <span class="ph-title">Time series placeholder</span>
+          <span class="ph-desc">时间序列待接入</span>
+        </div>
+        <div id="pane-table" class="placeholder" hidden>
+          <span class="ph-title">Data table placeholder</span>
+          <span class="ph-desc">数据表待接入</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <span>数据来源 · 引用方式 · 联系方式 · v0.2 · 原型（占位符，后续接入真实管线）</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
