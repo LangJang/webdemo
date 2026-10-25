@@ -1,1 +1,1 @@
-"""SCS Marine Data Tool — web prototype package (self-contained, no ``src`` imports)."""
+"""Data Information Portal — web prototype package (self-contained, no ``src`` imports)."""
