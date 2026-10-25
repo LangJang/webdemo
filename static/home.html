@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SCS 海洋环境数据平台 · 首页</title>
+  <title>数据信息门户 · 首页</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body data-page="home">
@@ -11,8 +11,8 @@
   <header class="app-header">
     <div class="header-inner">
       <a class="brand" href="/">
-        <span class="brand-cn">SCS 海洋环境数据平台</span>
-        <span class="brand-en">South China Sea Marine Environmental Data Platform</span>
+        <span class="brand-cn">数据信息门户</span>
+        <span class="brand-en">Data Information Portal</span>
       </a>
       <nav class="main-nav">
         <a href="/" data-nav="home">首页</a>
@@ -26,7 +26,7 @@
 
   <main class="home-main">
     <section class="hero">
-      <h1>南海海洋环境数据平台</h1>
+      <h1>数据信息门户</h1>
       <p class="hero-sub">多源海洋数据 · 检索 · 制图 · 下载 — 覆盖物理海洋、生物地球化学与渔业/eDNA</p>
       <div class="hero-cta">
         <a class="btn btn-primary btn-lg" href="/database">进入数据库</a>
@@ -39,6 +39,15 @@
       <div class="stat"><span class="stat-num" id="stat-files">—</span><span class="stat-label">数据文件 Files</span></div>
       <div class="stat"><span class="stat-num" id="stat-spatial">—</span><span class="stat-label">空间覆盖 Spatial</span></div>
       <div class="stat"><span class="stat-num" id="stat-temporal">—</span><span class="stat-label">时间范围 Temporal</span></div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">关于本平台</h2>
+      <p class="about-text">
+        本平台聚合多源南海海洋环境数据（SCSIO 模型输出、CMEMS/Copernicus 再分析产品），
+        通过统一的适配器与规范变量体系（canonical schema）进行标准化，提供检索、制图与下载服务。
+        当前为界面原型：数据与图件以占位符展示，后续接入真实数据管线。
+      </p>
     </section>
 
     <section class="panel">
@@ -68,12 +77,21 @@
     </section>
 
     <section class="panel">
-      <h2 class="section-title">关于本平台</h2>
-      <p class="about-text">
-        本平台聚合多源南海海洋环境数据（SCSIO 模型输出、CMEMS/Copernicus 再分析产品），
-        通过统一的适配器与规范变量体系（canonical schema）进行标准化，提供检索、制图与下载服务。
-        当前为界面原型：数据与图件以占位符展示，后续接入真实数据管线。
-      </p>
+      <h2 class="section-title">数据来源与合作单位 Data Sources &amp; Partners</h2>
+      <div class="quick-cards">
+        <a class="qcard" href="https://data.scsio.ac.cn/" target="_blank" rel="noopener">
+          <h3>南海海洋研究所数据中心 SCSIO</h3>
+          <p>主要合作对象 · 长期原始数据来源</p>
+        </a>
+        <a class="qcard" href="http://www.nsoas.org.cn/" target="_blank" rel="noopener">
+          <h3>国家卫星海洋应用中心 NSOAS</h3>
+          <p>主要合作对象 · 海洋卫星遥感数据</p>
+        </a>
+        <a class="qcard" href="https://data.marine.copernicus.eu/products" target="_blank" rel="noopener">
+          <h3>哥白尼海洋服务 Copernicus Marine</h3>
+          <p>全球海洋再分析与产品</p>
+        </a>
+      </div>
     </section>
   </main>
 

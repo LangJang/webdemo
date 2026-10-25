@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------------------
-   SCS Marine Data Tool — web prototype stylesheet (multi-page v0.2).
+   Data Information Portal — web prototype stylesheet (multi-page v0.2).
    Academic / research-tool aesthetic: white canvas, restrained ocean accent,
    clear hierarchy. No external dependencies.
 --------------------------------------------------------------------------- */
@@ -410,12 +410,14 @@ td.bad { color: #b23a2f; }
 .param-group.simple { opacity: 0.92; }
 
 /* ---- Achievements: masonry cards -------------------------------------- */
-.masonry { column-count: 3; column-gap: 16px; }
-.masonry > * { break-inside: avoid; }
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
 .ach-card {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 16px;
+  display: block;
+  margin: 0;
   border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
@@ -510,9 +512,8 @@ td.bad { color: #b23a2f; }
 @media (max-width: 900px) {
   .chart-grid { grid-template-columns: 1fr; }
   .header-inner { flex-direction: column; align-items: flex-start; }
-  .masonry { column-count: 2; }
 }
 
-@media (max-width: 600px) {
-  .masonry { column-count: 1; }
+@media (max-width: 640px) {
+  .masonry { grid-template-columns: 1fr; }
 }

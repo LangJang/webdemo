@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------------------
-   SCS Marine Data Tool — web prototype frontend logic (multi-page v0.2).
+   Data Information Portal — web prototype frontend logic (multi-page v0.2).
 
    One shared script.  Each page sets <body data-page="...">; the dispatcher
    below runs the matching initializer.  Charts and data remain text

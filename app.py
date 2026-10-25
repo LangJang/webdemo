@@ -1,5 +1,5 @@
 """
-FastAPI web prototype for the SCS Marine Environmental Data Tool.
+FastAPI web prototype for the Data Information Portal.
 
 Multi-page UI (home / database / upload / chart), academic-minimal style,
 Chinese-primary with English terms.  Self-contained: no ``src`` imports;
@@ -8,6 +8,7 @@ data and charts are mock JSON + text placeholders.
 Wire real data later by replacing the mock endpoints with calls to
 ``src.core.*`` — the route/page structure is already in place.
 """
+# python -m uvicorn app:app --host 0.0.0.0 --port 8000
 
 from __future__ import annotations
 
@@ -20,7 +21,7 @@ from fastapi.staticfiles import StaticFiles
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 
-app = FastAPI(title="SCS Marine Data Tool — Web Demo", version="0.2.0")
+app = FastAPI(title="Data Information Portal — Web Demo", version="0.2.0")
 
 # ---------------------------------------------------------------------------
 # Mock registry — mirrors the shape of the real ``config.yaml`` entries.
@@ -194,32 +195,6 @@ CATALOGS: dict = {
 # Achievement showcase (成果展示): image placeholder + intro + download entries.
 ACHIEVEMENTS: list[dict] = [
     {
-        "id": "ach-3d-current",
-        "title": "南海三维流场与温盐再分析（2023）",
-        "cover_color": "#14506e",
-        "tag": "物理海洋",
-        "intro": "基于 ROMS 的高分辨率三维流场、温度与盐度再分析产品，覆盖南海全海域。",
-        "tags": ["物理海洋", "ROMS", "再分析"],
-        "entries": [
-            {"title": "表层流场图集", "desc": "逐日表层流场矢量与海表温度叠加图（365 幅）。", "download": "surface_current_2023.zip"},
-            {"title": "断面温盐剖面", "desc": "18°N 断面温盐剖面数据集（NetCDF）。", "download": "section_ts_18n.nc"},
-            {"title": "模式评估报告", "desc": "与 CMEMS 产品的偏差统计与技术报告（PDF）。", "download": "validation_report.pdf"},
-        ],
-    },
-    {
-        "id": "ach-chl-pp",
-        "title": "南海叶绿素与初级生产力遥感产品",
-        "cover_color": "#1a7a4a",
-        "tag": "遥感",
-        "intro": "多源卫星反演的叶绿素浓度与初级生产力月平均产品。",
-        "tags": ["遥感", "叶绿素", "初级生产力"],
-        "entries": [
-            {"title": "月平均叶绿素", "desc": "2003–2023 年月平均叶绿素浓度网格（GeoTIFF）。", "download": "chl_monthly_2003_2023.tif"},
-            {"title": "初级生产力", "desc": "基于 VGPM 模型的初级生产力估算产品。", "download": "pp_vgpm.nc"},
-            {"title": "反演算法说明", "desc": "反演算法与不确定性说明文档（PDF）。", "download": "chl_algorithm.pdf"},
-        ],
-    },
-    {
         "id": "ach-fishery-spatiotemporal",
         "title": "南海渔业捕捞时空格局数据集",
         "cover_color": "#b26a2f",
@@ -243,19 +218,6 @@ ACHIEVEMENTS: list[dict] = [
             {"title": "OTU/ASV 丰度表", "desc": "采样站点 OTU/ASV 丰度表（BIOM/CSV）。", "download": "otu_table.biom"},
             {"title": "群落多样性指数", "desc": "各站点 α/β 多样性指数统计表。", "download": "diversity_indices.csv"},
             {"title": "采样站点元数据", "desc": "采样站位、时间、深度等元数据（CSV）。", "download": "edna_station_meta.csv"},
-        ],
-    },
-    {
-        "id": "ach-front-eddy",
-        "title": "南海锋面与涡旋自动识别产品",
-        "cover_color": "#0f6f8a",
-        "tag": "物理海洋",
-        "intro": "基于卫星海表高度与海表温度的锋面、涡旋自动识别产品。",
-        "tags": ["锋面", "涡旋", "中尺度"],
-        "entries": [
-            {"title": "锋面位置数据集", "desc": "逐日锋面位置与强度矢量数据（NetCDF）。", "download": "fronts_daily.nc"},
-            {"title": "涡旋轨迹目录", "desc": "中尺度涡旋自动追踪轨迹目录（CSV）。", "download": "eddy_tracks.csv"},
-            {"title": "识别算法代码", "desc": "锋面/涡旋识别算法的开源代码（Python）。", "download": "front_eddy_detect.zip"},
         ],
     },
     {
